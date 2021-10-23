@@ -5,8 +5,8 @@ module.exports = ({ logger, userRepository, tokenService }) => ({
     const callName = `${fileName}.refresh()`;
     logger.info(`${callName} entered with token: ${token}`);
     const { id } = tokenService.pickPayload(token);
-    const { _id } = await userRepository.findUserById(id);
+    const { userId, _id } = await userRepository.findUserById(id);
     const newToken = tokenService.createToken(_id);
-    return { id: _id, token: newToken };
+    return { id: userId, token: newToken };
   },
 });
