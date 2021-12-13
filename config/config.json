@@ -13,6 +13,12 @@
         "topicEvent": "user-creation",
         "topicType": "direct",
         "routingKey": "auth"
+      },
+      {
+        "topicName": "userChange",
+        "topicEvent": "user-change",
+        "topicType": "fanout",
+        "routingKey": ""
       }
     ],
     "pubs": [

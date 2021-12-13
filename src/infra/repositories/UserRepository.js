@@ -27,6 +27,6 @@ module.exports = class UserRepository {
   async delete(id) {
     const callName = `${fileName}.delete()`;
     this.logger.info(`${callName} entered with id: ${id}`);
-    return this.userModel.deleteOne({ _id: id });
+    return this.userModel.deleteOne({ userId: id });
   }
 };
